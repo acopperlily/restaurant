@@ -14,3 +14,8 @@ li {
   padding: 10px;
   
 }
+
+#hero img {
+  width: 100vw;
+  /* background-image: url('./heroCat.jpg'); */
+}

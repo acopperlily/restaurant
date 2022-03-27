@@ -1,5 +1,5 @@
 import './style.css';
-import './Catsrepublic.jpg';
+import './heroCat.jpg';
 
 console.log('testing...');
 console.log('moar');
