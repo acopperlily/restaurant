@@ -2,11 +2,13 @@ function createHeader() {
     const header = document.createElement('header');
     const ul = document.createElement('ul');
     const links = ['Fat Cat Café', 'Home', 'Menu', 'Contact'];
-    for (let i = 0; i < links.length; i++) {
+
+    links.forEach(link => {
         const li = document.createElement('li');
-        li.textContent = links[i];
+        li.textContent = link;
         ul.appendChild(li);
-    }
+    });
+
     ul.firstElementChild.classList.add('brand');
 
     header.appendChild(ul);
