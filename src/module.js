@@ -13,4 +13,11 @@ function createHeader() {
     return header;
 }
 
-export { createHeader };
+function createHeadline() {
+    const h2 = document.createElement('h2');
+    h2.textContent = "Whether Illegally Smol or Heckin' Chonker, from Fine Boi to Absolute Unit, you'll fit in at Fat Cat Cafe";
+    h2.classList.add('headline');
+    return h2;
+}
+
+export { createHeader, createHeadline };
