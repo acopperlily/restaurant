@@ -17,9 +17,28 @@ function createHeader() {
 
 function createHeadline() {
   const h2 = document.createElement('h2');
+  const headline = ['Whether ', ' or ', ', from ', ' to ', " – you'll fit in at "];
+  const cats = ['Illegaly Smol', "Heckin' Chonker", 'Fine Boi', 'Absolute Unit'];
+
+  let text;
+
+  let i;
+  for (i = 0; i < cats.length; i++) {
+    const span = document.createElement('span');
+    span.textContent = cats[i];
+    span.classList.add(cats[i].toLowerCase().split(' ')[1]);
+    text = document.createTextNode(headline[i]);
+    h2.appendChild(text);
+    h2.appendChild(span);
+  }
+
+  text = document.createTextNode(headline[i]);
+  h2.appendChild(text);
+
+
+
   const strong = document.createElement('strong');
   strong.textContent = 'Fat Cat Café';
-  h2.textContent = "Whether Illegally Smol or Heckin' Chonker, from Fine Boi to Absolute Unit, you'll fit in at ";
   h2.appendChild(strong);
   h2.classList.add('headline');
   return h2;
