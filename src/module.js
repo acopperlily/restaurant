@@ -31,23 +31,30 @@ function createHero() {
   return hero;
 }
 
-function createWords() {
-  const words = document.createElement('div');
-  words.setAttribute('id', 'words');
+function createFeatures() {
+  const features = document.createElement('div');
+  features.setAttribute('id', 'features');
+  const icons = ['❌', '❌', '✅'];
 
-  const features = [
-    "No microchip features here!",
+  const details = [
+    "No microchip feeders here!",
     "All noms served on a flat dish to avoid whisker fatigue",
     "Unlimited access to water fountain with purchase of any entrée"
   ];
 
-  features.forEach(feature => {
-    const p = document.createElement('p');
-    p.textContent = feature;
-    p.classList.add('feature');
-    words.appendChild(p);
-  });
-  return words;
+  for (let i = 0; i < icons.length; i++) {
+    const icon = document.createElement('span');
+    icon.textContent = icons[i];
+    const detail = document.createElement('p');
+    detail.textContent = details[i];
+    const feature = document.createElement('div');
+    feature.classList.add('feature');
+    feature.appendChild(icon);
+    feature.appendChild(detail);
+    features.appendChild(feature);
+  }
+
+  return features;
 }
 
-export { createHeader, createHeadline, createWords, createHero };
+export { createHeader, createHeadline, createFeatures, createHero };
