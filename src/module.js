@@ -25,6 +25,12 @@ function createHeadline() {
   return h2;
 }
 
+function createHero() {
+  const hero = document.createElement('div');
+  hero.setAttribute('id', 'hero');
+  return hero;
+}
+
 function createWords() {
   const words = document.createElement('div');
   words.setAttribute('id', 'words');
@@ -44,4 +50,4 @@ function createWords() {
   return words;
 }
 
-export { createHeader, createHeadline, createWords };
+export { createHeader, createHeadline, createWords, createHero };
