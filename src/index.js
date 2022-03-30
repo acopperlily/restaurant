@@ -5,7 +5,7 @@ import {
   createHeadline,
   createHero,
   createFeatures
-} from './module';
+} from './home';
 
 const div = document.getElementById('content');
 div.appendChild(createHeader());

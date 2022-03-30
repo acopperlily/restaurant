@@ -2,6 +2,7 @@ function createHeader() {
   const header = document.createElement('header');
   const ul = document.createElement('ul');
   const links = ['Fat Cat Café', 'Home', 'Menu', 'Contact'];
+  const ids = ['brand', 'home', 'menu', 'contact'];
 
   links.forEach(link => {
     const li = document.createElement('li');
@@ -16,7 +17,7 @@ function createHeader() {
 }
 
 function createHeadline() {
-  const h2 = document.createElement('h2');
+  const h1 = document.createElement('h1');
   const headline = ['Whether ', ' or ', ', from ', ' to ', " – you'll fit in at "];
   const cats = ['Illegaly Smol', "Heckin' Chonker", 'Fine Boi', 'Absolute Unit'];
 
@@ -28,20 +29,20 @@ function createHeadline() {
     span.textContent = cats[i];
     span.classList.add(cats[i].toLowerCase().split(' ')[1]);
     text = document.createTextNode(headline[i]);
-    h2.appendChild(text);
-    h2.appendChild(span);
+    h1.appendChild(text);
+    h1.appendChild(span);
   }
 
   text = document.createTextNode(headline[i]);
-  h2.appendChild(text);
+  h1.appendChild(text);
 
 
 
   const strong = document.createElement('strong');
   strong.textContent = 'Fat Cat Café';
-  h2.appendChild(strong);
-  h2.classList.add('headline');
-  return h2;
+  h1.appendChild(strong);
+  h1.classList.add('headline');
+  return h1;
 }
 
 function createHero() {

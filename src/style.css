@@ -5,10 +5,15 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h2 {
+header {
+  padding: 10px 20px;
+  background-color: purple;
+}
+
+h1 {
   padding: 20px;
   text-align: center;
   font-style: italic;
@@ -18,13 +23,21 @@ strong {
   color: red;
   font-family: 'Lakki Reddy', cursive;
   font-style: normal;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 }
 
 ul {
   list-style: none;
   display: flex;
-  
+  align-items: center;
+}
+
+.brand {
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 1.5rem;
+
+  /* This offsets the tall em-square of this font */
+  padding-top: 15px;
 }
 
 li:nth-child(2) {
@@ -32,7 +45,7 @@ li:nth-child(2) {
 }
 
 li {
-  padding: 10px;
+  padding: 0 12px;
   
 }
 
@@ -83,7 +96,9 @@ li {
   font-family: 'Sacramento', cursive;
   font-style: normal;
 }
+
 .unit {
   font-family: 'Chango', cursive;
   font-style: normal;
+  text-transform: uppercase;
 }
