@@ -1,5 +1,6 @@
 import './style.css';
-import './heroCat.jpg';
+// import './heroCat.jpg';
+// import './catFoodSmallest.jpg';
 import {
   createHeader,
   createHeadline,
@@ -18,7 +19,7 @@ const main = document.createElement('main');
 
 function buildHome() {
   main.appendChild(createHeadline());
-  main.appendChild(createHero());
+  main.appendChild(createHero('homeHero'));
   main.appendChild(createFeatures());
   div.appendChild(main);
 }
@@ -26,6 +27,12 @@ function buildHome() {
 function buildMenu() {
   main.appendChild(createTitle());
   main.appendChild(createH2());
+  main.appendChild(createHero('menuHero'));
+  const hero = document.getElementById('menuHero');
+  const credit = document.createElement('p');
+  credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
+  credit.classList.add('credit');
+  hero.appendChild(credit);
   div.appendChild(main);
 }
 

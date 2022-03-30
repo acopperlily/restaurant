@@ -42,9 +42,9 @@ function createHeadline() {
   return h1;
 }
 
-function createHero() {
+function createHero(id) {
   const hero = document.createElement('div');
-  hero.setAttribute('id', 'hero');
+  hero.setAttribute('id', id);
   return hero;
 }
 

@@ -11,4 +11,9 @@ function createH2() {
   return h2;
 }
 
+function createPhotoCredit(hero) {
+  hero.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
+  hero.classList.add('credit');
+}
+
 export { createTitle, createH2 };
