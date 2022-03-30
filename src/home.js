@@ -18,7 +18,7 @@ function createHeader() {
 function createHeadline() {
   const h1 = document.createElement('h1');
   const headline = ['Whether ', ' or ', ', from ', ' to ', " – you'll fit in at "];
-  const cats = ['Illegaly Smol', "Heckin' Chonker", 'Fine Boi', 'Absolute Unit'];
+  const cats = ['Illegaly Smol', "Heckin' Chonker", 'Fine Boi', 'Absolute Unit', 'Fat Cat Café'];
 
   let text;
 
@@ -32,14 +32,12 @@ function createHeadline() {
     h1.appendChild(span);
   }
 
-  text = document.createTextNode(headline[i]);
-  h1.appendChild(text);
+  // text = document.createTextNode(headline[i]);
+  // h1.appendChild(text);
 
-
-
-  const strong = document.createElement('strong');
-  strong.textContent = 'Fat Cat Café';
-  h1.appendChild(strong);
+  // const strong = document.createElement('strong');
+  // strong.textContent = 'Fat Cat Café';
+  // h1.appendChild(strong);
   h1.classList.add('headline');
   return h1;
 }

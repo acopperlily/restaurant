@@ -19,7 +19,7 @@ h1 {
   font-style: italic;
 }
 
-strong {
+.cat {
   color: red;
   font-family: 'Lakki Reddy', cursive;
   font-style: normal;
@@ -97,4 +97,8 @@ li {
   font-family: 'Chango', cursive;
   font-style: normal;
   text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
 }

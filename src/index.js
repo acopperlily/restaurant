@@ -6,6 +6,10 @@ import {
   createHero,
   createFeatures
 } from './home';
+import {
+  createTitle,
+  createH2
+} from './menu';
 
 let page = 'home';
 const div = document.getElementById('content');
@@ -19,21 +23,34 @@ function buildHome() {
   div.appendChild(main);
 }
 
-if (page == 'home') {
-  buildHome();
+function buildMenu() {
+  main.appendChild(createTitle());
+  main.appendChild(createH2());
+  div.appendChild(main);
+}
 
-  const tabs = document.querySelectorAll('li');
-  console.log(tabs);
-  tabs.forEach(tab => {
-    tab.addEventListener('click', e => {
-      const link = e.path[0].id;
-      console.log(link);
-      if (link != page) {
-        page = link;
-        main.textContent = '';
+
+buildHome();
+
+const tabs = document.querySelectorAll('li');
+console.log(tabs);
+tabs.forEach(tab => {
+  tab.addEventListener('click', e => {
+    const link = e.path[0].id;
+    console.log(link);
+    if (link != page) {
+      page = link;
+      main.textContent = '';
+      if (link == 'menu') {
+        buildMenu();
+      } else if (link == 'contact') {
+        console.log('nope');
       } else {
         buildHome();
       }
-    });
+    } else {
+      console.log('same page');
+    }
   });
-}
+});
+
