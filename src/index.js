@@ -10,14 +10,17 @@ import {
 let page = 'home';
 const div = document.getElementById('content');
 div.appendChild(createHeader());
+const main = document.createElement('main');
 
-if (page == 'home') {
-  const main = document.createElement('main');
+function buildHome() {
   main.appendChild(createHeadline());
   main.appendChild(createHero());
   main.appendChild(createFeatures());
-
   div.appendChild(main);
+}
+
+if (page == 'home') {
+  buildHome();
 
   const tabs = document.querySelectorAll('li');
   console.log(tabs);
@@ -28,6 +31,8 @@ if (page == 'home') {
       if (link != page) {
         page = link;
         main.textContent = '';
+      } else {
+        buildHome();
       }
     });
   });
