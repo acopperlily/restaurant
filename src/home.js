@@ -1,16 +1,15 @@
 function createHeader() {
   const header = document.createElement('header');
   const ul = document.createElement('ul');
-  const links = ['Fat Cat Café', 'Home', 'Menu', 'Contact'];
-  const ids = ['brand', 'home', 'menu', 'contact'];
+  const links = ['Fat Cat Café', 'Menu', 'Contact'];
+  const ids = ['home', 'menu', 'contact'];
 
-  links.forEach(link => {
+  for (let i = 0; i < links.length; i++) {
     const li = document.createElement('li');
-    li.textContent = link;
+    li.textContent = links[i];
+    li.setAttribute('id', ids[i]);
     ul.appendChild(li);
-  });
-
-  ul.firstElementChild.classList.add('brand');
+  }
 
   header.appendChild(ul);
   return header;

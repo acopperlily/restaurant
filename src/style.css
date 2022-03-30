@@ -32,7 +32,7 @@ ul {
   align-items: center;
 }
 
-.brand {
+#home {
   font-family: 'Lakki Reddy', cursive;
   font-size: 1.5rem;
 
@@ -40,17 +40,13 @@ ul {
   padding-top: 15px;
 }
 
-li:nth-child(2) {
+#menu {
   margin-left: auto;
 }
 
 li {
   padding: 0 12px;
   
-}
-
-#right {
-  margin-left: auto;
 }
 
 #hero{
