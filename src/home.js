@@ -1,6 +1,5 @@
-import Microchip from './microchip.jpg';
-import Dish from './deepDish.jpg';
 import Fountain from './fountain.jpg';
+import No from './no.png';
 
 function createHeader() {
   const header = document.createElement('header');
@@ -55,8 +54,8 @@ function createHero(id) {
 function createFeatures() {
   const features = document.createElement('div');
   features.setAttribute('id', 'features');
-  const icons = ['❌', '❌', '✅'];
-  const images = [Microchip, Dish, Fountain];
+  const images = [No, No, Fountain];
+  const ids = ['no', 'dish', 'fountain'];
 
   const details = [
     "No microchip feeders here!",
@@ -64,19 +63,18 @@ function createFeatures() {
     "Unlimited access to water fountain with purchase of any entrée"
   ];
 
-  for (let i = 0; i < icons.length; i++) {
-    // const icon = document.createElement('span');
-    // icon.textContent = icons[i];
+  for (let i = 0; i < images.length; i++) {
+    const icon = document.createElement('div');
+    icon.setAttribute('id', ids[i]);
 
     const img = new Image();
     img.src = images[i];
-
+    icon.appendChild(img);
     const detail = document.createElement('p');
     detail.textContent = details[i];
     const feature = document.createElement('div');
     feature.classList.add('feature');
-    // feature.appendChild(icon);
-    feature.appendChild(img);
+    feature.appendChild(icon);
     feature.appendChild(detail);
     features.appendChild(feature);
   }

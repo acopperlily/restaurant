@@ -116,8 +116,31 @@ h2 {
   text-align: center;
 }
 
-img {
+#no {
   width: 80px;
-  border: 6px solid red;
+  height: 80px;
+  margin: auto;
+  background-image: url('./microchip.jpg');
+  background-size: contain;
   border-radius: 50%;
+}
+
+#dish {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  background-image: url('./deepDish.jpg');
+  background-size: contain;
+  border-radius: 50%;
+}
+
+#fountain img {
+  width: 80px;
+  border: 8px solid green;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.feature img {
+  width: 80px;
 }
