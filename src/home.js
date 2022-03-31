@@ -57,11 +57,17 @@ function createFeatures() {
   const images = [No, No, Fountain];
   const ids = ['no', 'dish', 'fountain'];
 
-  const details = [
-    "No microchip feeders here!",
-    "All noms served on a flat dish to avoid whisker fatigue",
-    "Unlimited access to water fountain with purchase of any entrée"
+  const featureHeadlines = [
+    "Microchip Feeders Prohibited",
+    "No Whisker Fatigue",
+    "Unlimited Drinks"
   ];
+
+  const details = [
+    "We encourage you to eat as little or as much as you please",
+    "For your comfort, all noms are served on a flat dish",
+    "Enjoy fresh, running water placed thoughtfully far away from your meal"
+  ]
 
   for (let i = 0; i < images.length; i++) {
     const icon = document.createElement('div');
@@ -70,11 +76,15 @@ function createFeatures() {
     const img = new Image();
     img.src = images[i];
     icon.appendChild(img);
-    const detail = document.createElement('p');
-    detail.textContent = details[i];
+    const featureHeadline = document.createElement('h3');
+    featureHeadline.textContent = featureHeadlines[i];
     const feature = document.createElement('div');
     feature.classList.add('feature');
+
+    const detail = document.createElement('p');
+    detail.textContent = details[i];
     feature.appendChild(icon);
+    feature.appendChild(featureHeadline);
     feature.appendChild(detail);
     features.appendChild(feature);
   }
