@@ -52,6 +52,7 @@ li {
 #homeHero{
   width: 100vw;
   height: 270px;
+  margin-bottom: 40px;
   background-image: url('./heroCat.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -74,10 +75,10 @@ li {
 
 #features {
   margin: auto;
-  width: 50vw;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
   text-align: center;
 }
@@ -85,6 +86,8 @@ li {
 .feature {
   padding: 20px;
   font-size: 1.2rem;
+  width: 30%;
+  min-width: min(350px, 60vw);
 }
 
 .feature span {
@@ -117,8 +120,8 @@ h2 {
 }
 
 #no {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin: auto;
   background-image: url('./microchip.jpg');
   background-size: contain;
@@ -126,8 +129,8 @@ h2 {
 }
 
 #dish {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin: auto;
   background-image: url('./deepDish.jpg');
   background-size: contain;
@@ -135,20 +138,26 @@ h2 {
 }
 
 #fountain img {
-  width: 80px;
-  border: 8px solid green;
+  width: 100px;
+  border: 9px solid green;
   border-radius: 50%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .feature img {
-  width: 80px;
+  width: 100px;
 }
 
 h3 {
   font-family: 'Lobster', cursive;
+  margin-bottom: 5px;
 }
 
 p {
   font-size: .9rem;
+  line-height: 1.4;
+}
+
+#no, #dish, #fountain {
+  margin-bottom: 10px;
 }
