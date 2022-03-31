@@ -1,3 +1,7 @@
+import Microchip from './microchip.jpg';
+import Dish from './deepDish.jpg';
+import Fountain from './fountain.jpg';
+
 function createHeader() {
   const header = document.createElement('header');
   const ul = document.createElement('ul');
@@ -52,6 +56,7 @@ function createFeatures() {
   const features = document.createElement('div');
   features.setAttribute('id', 'features');
   const icons = ['❌', '❌', '✅'];
+  const images = [Microchip, Dish, Fountain];
 
   const details = [
     "No microchip feeders here!",
@@ -60,13 +65,18 @@ function createFeatures() {
   ];
 
   for (let i = 0; i < icons.length; i++) {
-    const icon = document.createElement('span');
-    icon.textContent = icons[i];
+    // const icon = document.createElement('span');
+    // icon.textContent = icons[i];
+
+    const img = new Image();
+    img.src = images[i];
+
     const detail = document.createElement('p');
     detail.textContent = details[i];
     const feature = document.createElement('div');
     feature.classList.add('feature');
-    feature.appendChild(icon);
+    // feature.appendChild(icon);
+    feature.appendChild(img);
     feature.appendChild(detail);
     features.appendChild(feature);
   }

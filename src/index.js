@@ -1,4 +1,5 @@
 import './style.css';
+import './microchip.jpg';
 // import './heroCat.jpg';
 // import './catFoodSmallest.jpg';
 import {

@@ -7,7 +7,7 @@ function createTitle() {
 
 function createH2() {
   const h2 = document.createElement('h2');
-  h2.textContent = 'Enjoy unlimited trips to our water fountain with purchase of any entrée'
+  h2.textContent = 'Enjoy unlimited trips to our Water Fountain with purrrchase of any entrée'
   return h2;
 }
 

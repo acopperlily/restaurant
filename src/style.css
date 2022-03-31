@@ -115,3 +115,9 @@ li {
 h2 {
   text-align: center;
 }
+
+img {
+  width: 80px;
+  border: 6px solid red;
+  border-radius: 50%;
+}
