@@ -27,4 +27,30 @@ function createPhotoCredit(hero) {
   hero.classList.add('credit');
 }
 
-export { createTitle, createH2, createMenuHero };
+function createItems() {
+  const menu = document.createElement('div');
+  menu.setAttribute('id', 'menuItems');
+  // const h2 = document.createElement('h2');
+  // h2.textContent = 'Your choice of chicken, beef, or fish';
+  // menu.appendChild(h2);
+
+  const food = ['Paté', 'Meaty Bits', 'Shreds'];
+
+  let i;
+  for (i = 0; i < food.length; i++) {
+    const dish = document.createElement('div');
+    dish.classList.add('dish');
+    const img = document.createElement('div');
+    img.setAttribute('id', 'item');
+    const h3 = document.createElement('h3');
+    const p = document.createElement('p');
+
+    h3.textContent = food[i];
+    dish.appendChild(img);
+    dish.appendChild(h3);
+    menu.appendChild(dish);
+  }
+  return menu;
+}
+
+export { createTitle, createH2, createMenuHero, createItems };

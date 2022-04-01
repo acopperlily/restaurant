@@ -12,7 +12,8 @@ import {
 import {
   createTitle,
   createH2,
-  createMenuHero
+  createMenuHero,
+  createItems
 } from './menu';
 
 let page = 'home';
@@ -43,6 +44,10 @@ function buildMenu() {
   credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
   credit.classList.add('credit');
   hero.appendChild(credit);
+  const h2 = document.createElement('h2');
+  h2.textContent = 'Your choice of chicken, beef, or fish';
+  main.appendChild(h2);
+  main.appendChild(createItems());
   div.insertBefore(main, footer);
 }
 
