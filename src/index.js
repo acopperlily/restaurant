@@ -6,7 +6,8 @@ import {
   createHeader,
   createHeadline,
   createHero,
-  createFeatures
+  createFeatures,
+  createFooter
 } from './home';
 import {
   createTitle,
@@ -17,13 +18,18 @@ import {
 let page = 'home';
 const div = document.getElementById('content');
 div.appendChild(createHeader());
+div.appendChild(createFooter());
+const footer = document.getElementsByTagName('footer')[0];
+console.log(footer);
 const main = document.createElement('main');
+
 
 function buildHome() {
   main.appendChild(createHeadline());
   main.appendChild(createHero('homeHero'));
   main.appendChild(createFeatures());
-  div.appendChild(main);
+  // div.appendChild(main);
+  div.insertBefore(main, footer);
 }
 
 function buildMenu() {
@@ -37,7 +43,7 @@ function buildMenu() {
   credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
   credit.classList.add('credit');
   hero.appendChild(credit);
-  div.appendChild(main);
+  div.insertBefore(main, footer);
 }
 
 

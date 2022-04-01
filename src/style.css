@@ -83,7 +83,7 @@ li {
 }
 
 #features {
-  margin: auto;
+  margin-bottom: 50px;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -172,6 +172,12 @@ p {
   line-height: 1.4;
 }
 
-/* #no, #dish, #fountain {
-  margin-bottom: 10px;
-} */
+footer {
+  background-color: purple;
+  text-align: center;
+  height: 70px;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -92,4 +92,15 @@ function createFeatures() {
   return features;
 }
 
-export { createHeader, createHeadline, createFeatures, createHero };
+function createFooter() {
+  const footer = document.createElement('footer');
+  const cc = document.createElement('p');
+  const icon = document.createElement('span');
+
+  cc.textContent = 'Made with ❤️ by April Copley';
+  icon.textContent = 'O';
+  footer.appendChild(cc);
+  return footer;
+}
+
+export { createHeader, createHeadline, createFeatures, createHero, createFooter };
