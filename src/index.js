@@ -1,7 +1,7 @@
 import './style.css';
 import './microchip.jpg';
 // import './heroCat.jpg';
-// import './catFoodSmallest.jpg';
+import './catFoodSmallest.jpg';
 import {
   createHeader,
   createHeadline,
@@ -10,7 +10,8 @@ import {
 } from './home';
 import {
   createTitle,
-  createH2
+  createH2,
+  createMenuHero
 } from './menu';
 
 let page = 'home';
@@ -28,8 +29,10 @@ function buildHome() {
 function buildMenu() {
   main.appendChild(createTitle());
   main.appendChild(createH2());
-  main.appendChild(createHero('menuHero'));
+  // main.appendChild(createHero('menuHero'));
+  main.appendChild(createMenuHero());
   const hero = document.getElementById('menuHero');
+
   const credit = document.createElement('p');
   credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
   credit.classList.add('credit');

@@ -66,7 +66,7 @@ function createFeatures() {
   const details = [
     "We encourage you to eat as little or as much as you please",
     "For your comfort, all noms are served on a flat dish",
-    "Enjoy fresh, running water placed thoughtfully far away from your meal"
+    "Enjoy fresh, running water thoughtfully placed far away from your meal"
   ]
 
   for (let i = 0; i < images.length; i++) {

@@ -62,11 +62,20 @@ li {
 
 #menuHero {
   width: 100vw;
-  height: 300px;
-  background-image: url('./catFoodSmallest.jpg');
-  background-size: cover;
+  /* height: 20vh; */
+  /* height: 300px; */
+  /* max-width: 100%; */
+  
+  /* background-image: url('./catFoodSmallest.jpg'); */
+  /* background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
+}
+
+#menuHero img {
+  width: 100%;
+  max-height: max(20vh, 300px);
+  object-fit: cover;
 }
 
 .credit {
@@ -88,6 +97,12 @@ li {
   font-size: 1.2rem;
   width: 30%;
   min-width: min(350px, 60vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .feature span {
@@ -120,17 +135,16 @@ h2 {
 }
 
 #no {
-  width: 100px;
-  height: 100px;
-  margin: auto;
+  width: 110px;
+  height: 110px;
   background-image: url('./microchip.jpg');
   background-size: contain;
   border-radius: 50%;
 }
 
 #dish {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   margin: auto;
   background-image: url('./deepDish.jpg');
   background-size: contain;
@@ -138,14 +152,14 @@ h2 {
 }
 
 #fountain img {
-  width: 100px;
-  border: 9px solid green;
+  width: 110px;
+  border: 10px solid green;
   border-radius: 50%;
   /* margin: auto; */
 }
 
 .feature img {
-  width: 100px;
+  width: 110px;
 }
 
 h3 {
@@ -158,6 +172,6 @@ p {
   line-height: 1.4;
 }
 
-#no, #dish, #fountain {
+/* #no, #dish, #fountain {
   margin-bottom: 10px;
-}
+} */
