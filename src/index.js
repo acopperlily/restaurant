@@ -13,7 +13,7 @@ import {
   createTitle,
   createH2,
   createMenuHero,
-  createItems
+  createMenuItems
 } from './menu';
 
 let page = 'home';
@@ -47,7 +47,7 @@ function buildMenu() {
   const h2 = document.createElement('h2');
   h2.textContent = 'Your choice of chicken, beef, or fish';
   main.appendChild(h2);
-  main.appendChild(createItems());
+  main.appendChild(createMenuItems());
   div.insertBefore(main, footer);
 }
 

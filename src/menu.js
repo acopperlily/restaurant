@@ -27,61 +27,60 @@ function createPhotoCredit(hero) {
   hero.classList.add('credit');
 }
 
-function createItems() {
+function createMenuItems() {
   const menu = document.createElement('div');
   menu.setAttribute('id', 'menuItems');
-  // const h2 = document.createElement('h2');
-  // h2.textContent = 'Your choice of chicken, beef, or fish';
-  // menu.appendChild(h2);
 
-  const food = ['Paté', 'Meaty Bits', 'Shreds'];
-  const items = [
+  const menuItems = [
     {
-      img: 'blue',
+      photo: 'blue',
       dish: 'Paté',
       price: '$2',
       desc: 'Solid mold of protein, straight from the can'
     },
     {
-      img: 'yellow',
+      photo: 'yellow',
       dish: 'Chunks',
       price: '$3',
       desc: 'Hearty bits of protein smothered in a savory gravy'
     },
     {
-      img: 'purple',
+      photo: 'purple',
       dish: 'Shreds',
       price: '$4',
-      desc: 'Finely shredded protein swimming in a savory gravy'
+      desc: 'Finely shredded meat swimming in a savory gravy'
     }
   ];
 
-  items.forEach(item => {
-    console.log(item);
-    const dish = document.createElement('div');
-    dish.classList.add('dish');
-    const img = document.createElement('div');
-    img.classList.add('item');
-    console.log(item.img);
-    img.style.backgroundColor = item.img;
-    const h3 = document.createElement('h3');
-    h3.textContent = item.dish;
-    const price = document.createElement('p');
-    price.textContent = item.price;
-    const desc = document.createElement('p');
-    desc.textContent = item.desc;
+  const tags = ['div', 'h3', 'p', 'p'];
+  let i = 0;
 
-    dish.appendChild(img);
-    dish.appendChild(h3);
-    dish.appendChild(price);
-    dish.appendChild(desc);
-    menu.appendChild(dish);
+  menuItems.forEach(item => {
+    console.log(item);
+    const menuItem = document.createElement('div');
+    menuItem.classList.add('menuItem');
+
     for (let key in item) {
-      console.log(`${key}: ${item[key]}`);
+      const tag = document.createElement(tags[i]);
+      console.log(key);
+      console.log(`${key}`);
+      tag.classList.add(key);
+      if (key == 'photo') {
+        console.log(key == 'photo');
+        tag.style.backgroundColor = item.photo;
+      } else {
+        tag.textContent = item[key];
+      }
+      menuItem.appendChild(tag);
+      i++;
     }
+
+    i = 0;
+    menu.appendChild(menuItem);
+
   });
 
   return menu;
 }
 
-export { createTitle, createH2, createMenuHero, createItems };
+export { createTitle, createH2, createMenuHero, createMenuItems };

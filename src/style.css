@@ -9,6 +9,7 @@ body {
 }
 
 header {
+  width: 100%;
   padding: 10px 20px;
   background-color: purple;
 }
@@ -187,25 +188,39 @@ footer p {
 }
 
 #menuItems {
+  padding: 30px;
   width: 50vw;
   height: auto;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
   justify-content: center;
   gap: 30px 60px;
 }
 
-.item {
+.photo {
   width: 80px;
   height: 80px;
-  grid-row: 1 / 3;
+  /* grid-row: 1 / 3; */
   place-items: center;
 }
 
-.dish {
+.menuItem {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   grid-column-gap: 15px;
+}
+
+.dish {
+  align-self: flex-end;
+  padding: 0;
+}
+
+.price {
+  align-self: flex-end;
+}
+
+.desc {
+  grid-column: 1 / 3;
 }
