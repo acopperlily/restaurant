@@ -35,21 +35,52 @@ function createItems() {
   // menu.appendChild(h2);
 
   const food = ['Paté', 'Meaty Bits', 'Shreds'];
+  const items = [
+    {
+      img: 'blue',
+      dish: 'Paté',
+      price: '$2',
+      desc: 'Solid mold of protein, straight from the can'
+    },
+    {
+      img: 'yellow',
+      dish: 'Chunks',
+      price: '$3',
+      desc: 'Hearty bits of protein smothered in a savory gravy'
+    },
+    {
+      img: 'purple',
+      dish: 'Shreds',
+      price: '$4',
+      desc: 'Finely shredded protein swimming in a savory gravy'
+    }
+  ];
 
-  let i;
-  for (i = 0; i < food.length; i++) {
+  items.forEach(item => {
+    console.log(item);
     const dish = document.createElement('div');
     dish.classList.add('dish');
     const img = document.createElement('div');
-    img.setAttribute('id', 'item');
+    img.classList.add('item');
+    console.log(item.img);
+    img.style.backgroundColor = item.img;
     const h3 = document.createElement('h3');
-    const p = document.createElement('p');
+    h3.textContent = item.dish;
+    const price = document.createElement('p');
+    price.textContent = item.price;
+    const desc = document.createElement('p');
+    desc.textContent = item.desc;
 
-    h3.textContent = food[i];
     dish.appendChild(img);
     dish.appendChild(h3);
+    dish.appendChild(price);
+    dish.appendChild(desc);
     menu.appendChild(dish);
-  }
+    for (let key in item) {
+      console.log(`${key}: ${item[key]}`);
+    }
+  });
+
   return menu;
 }
 
