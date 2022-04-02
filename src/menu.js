@@ -2,7 +2,7 @@ import catFood from './catFoodSmallest.jpg';
 
 function createTitle() {
   const h1 = document.createElement('h1');
-  h1.classList.add('cat');
+  h1.classList.add('menuTitle');
   h1.textContent = 'Om Nom Noms';
   return h1;
 }
@@ -34,21 +34,27 @@ function createMenuItems() {
   const menuItems = [
     {
       photo: 'blue',
-      dish: 'Paté',
+      dish: 'Classic Paté',
       price: '$2',
       desc: 'Solid mold of protein, straight from the can'
     },
     {
       photo: 'yellow',
-      dish: 'Chunks',
+      dish: 'Comfort Chunks',
       price: '$3',
       desc: 'Hearty bits of protein smothered in a savory gravy'
     },
     {
       photo: 'purple',
-      dish: 'Shreds',
+      dish: 'Savory Shreds',
       price: '$4',
       desc: 'Finely shredded meat swimming in a savory gravy'
+    },
+    {
+      photo: 'orange',
+      dish: 'Fat Cat Feast',
+      price: '$5',
+      desc: "Choose any two combinations of Paté, Chunks, or Shreds",
     }
   ];
 

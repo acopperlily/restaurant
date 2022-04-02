@@ -1,4 +1,6 @@
-*, ::after, ::before {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -57,13 +59,6 @@ li {
   padding: 0 12px;
 }
 
-.cat {
-  color: red;
-  font-family: 'Lakki Reddy', cursive;
-  font-style: normal;
-  font-size: 2.5rem;
-}
-
 #home {
   font-family: 'Lakki Reddy', cursive;
   font-size: 1.5rem;
@@ -76,7 +71,7 @@ li {
   margin-left: auto;
 }
 
-#homeHero{
+#homeHero {
   width: 100vw;
   height: 270px;
   margin-bottom: 40px;
@@ -149,6 +144,14 @@ li {
   text-transform: uppercase;
 }
 
+.cat {
+  color: red;
+  font-family: 'Lakki Reddy',
+    cursive;
+  font-style: normal;
+  font-size: 2.8rem;
+}
+
 #no {
   width: 110px;
   height: 110px;
@@ -179,13 +182,22 @@ li {
 
 /* Menu page */
 
+/* Om Nom Noms */
+.menuTitle {
+  color: red;
+  font-family: 'Lakki Reddy', cursive;
+  font-style: normal;
+  font-size: 2.8rem;
+  padding-bottom: 0;
+}
+
 #menuItems {
   padding: 30px;
-  width: 80vw;
+  width: 70vw;
   /* height: auto; */
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
   /* justify-content: center; */
   align-items: flex-start;
   gap: 40px 80px;
@@ -193,9 +205,9 @@ li {
 
 .menuItem {
   display: grid;
-  grid-template-columns: 90px minmax(50px, 1fr) 20px;
+  grid-template-columns: 90px minmax(70px, 2fr) 20px;
   align-items: center;
-  /* grid-column-gap: 8px; */
+  grid-column-gap: 2px;
   grid-row-gap: 5px;
 }
 
@@ -204,18 +216,19 @@ li {
 .photo {
   width: 80px;
   height: 80px;
-  /* place-items: center; */
 }
 
 .dish {
   align-self: flex-end;
+  border-bottom: 2px dotted gray;
 }
 
 .price {
   text-align: right;
   align-self: flex-end;
+  border-bottom: 2px dotted gray;
 }
 
 .desc {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
 }
