@@ -32,10 +32,14 @@ footer p {
 
 h1 {
   font-style: italic;
+  text-align: center;
 }
 
 h2 {
   text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 h3 {
@@ -57,13 +61,24 @@ li {
   padding: 0 12px;
 }
 
+.pageTitle {
+  color: red;
+  font-family: 'Lakki Reddy', cursive;
+  font-style: normal;
+  font-size: 2.8rem;
+  padding-top: 20px;
+}
+
+.highlight {
+  border-bottom: 2px solid gray;
+}
+
 /* Home Page */
 
 #headline {
   min-width: min-content;
   max-width: max-content;
   max-height: 45vh;
-  /* max-width: 70%; */
   padding: 30px 40px 0 40px;
   font-size: calc(10px + .4vw);
   margin: 0 auto;
@@ -212,13 +227,6 @@ li {
 /* Menu page */
 
 /* Om Nom Noms */
-.menuTitle {
-  color: red;
-  font-family: 'Lakki Reddy', cursive;
-  font-style: normal;
-  font-size: 2.8rem;
-  padding-bottom: 0;
-}
 
 #menuItems {
   padding: 30px;

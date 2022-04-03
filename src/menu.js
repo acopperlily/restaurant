@@ -2,7 +2,7 @@ import catFood from './catFoodSmallest.jpg';
 
 function createTitle() {
   const h1 = document.createElement('h1');
-  h1.classList.add('menuTitle');
+  h1.classList.add('pageTitle');
   h1.textContent = 'Om Nom Noms';
   return h1;
 }
@@ -100,9 +100,7 @@ function buildMenu(div, main, footer) {
   credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
   credit.classList.add('credit');
   hero.appendChild(credit);
-  const h2 = document.createElement('h2');
-  h2.textContent = 'Your choice of chicken, beef, or fish';
-  main.appendChild(h2);
+
   main.appendChild(createMenuItems());
   div.insertBefore(main, footer);
 }

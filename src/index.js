@@ -7,7 +7,8 @@ import {
   createHeader,
   createFooter
 } from './home';
-import { buildMenu } from './menu';
+import { buildMenu } from './menu.js';
+import { buildContact } from './contact.js';
 
 let page = 'home';
 const div = document.getElementById('content');
@@ -32,6 +33,7 @@ tabs.forEach(tab => {
         buildMenu(div, main, footer);
       } else if (link == 'contact') {
         console.log('nope');
+        buildContact(div, main, footer);
       } else {
         buildHome(div, main, footer);
       }
