@@ -23,16 +23,15 @@ function createHeadline() {
   const headline1 = ['Whether ', 'Illegaly Smol', ' or ', "Heckin' Chonker", ','];
   const headline2 = ['from ', 'Fine Boi', ' to ', 'Absolute Unit', ' -'];
   const headline3 = ["you'll fit in at ", 'Fat Cat Café'];
+  let count = 1;
+
   [headline1, headline2, headline3].forEach(headline => {
+
     const h1 = document.createElement('h1');
-    for (let i = 0; i < headline1.length; i++) {
 
-      // Because headline3 has only 2 elements
-      if (headline[i] == null) {
-        break;
-      }
+    for (let i = 0; i < headline.length; i++) {
+
       let text;
-
 
       if (i % 2 == 0) { // Create normal text
         text = document.createTextNode(headline[i]);
@@ -43,10 +42,21 @@ function createHeadline() {
         text.classList.add(cat);
       }
       h1.appendChild(text);
+      if (i == 1) {
+        const lineBreak = document.createElement('br');
+        if (window.innerWidth > 589) {
+          lineBreak.classList.add('hide');
+        }
+        h1.appendChild(lineBreak);
+      }
     }
+
+    h1.setAttribute('id', `headline${count}`);
+    count++;
     heading.appendChild(h1);
-    heading.classList.add('headline');
+
   });
+  heading.setAttribute('id', 'headline');
   return heading;
 }
 
@@ -114,5 +124,16 @@ function buildHome(div, main, footer) {
   main.appendChild(createFeatures());
   div.insertBefore(main, footer);
 }
+
+let br = document.getElementsByTagName('br');
+window.addEventListener('resize', e => {
+  for (let i = 0; i < br.length; i++) {
+    if (e.target.innerWidth < 590) {
+      br[i].classList.remove('hide');
+    } else {
+      br[i].classList.add('hide');
+    }
+  }
+});
 
 export { createHeader, createFooter, buildHome };
