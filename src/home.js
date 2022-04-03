@@ -103,4 +103,11 @@ function createFooter() {
   return footer;
 }
 
-export { createHeader, createHeadline, createFeatures, createHero, createFooter };
+function buildHome(div, main, footer) {
+  main.appendChild(createHeadline());
+  main.appendChild(createHero('homeHero'));
+  main.appendChild(createFeatures());
+  div.insertBefore(main, footer);
+}
+
+export { createHeader, createFooter, buildHome };

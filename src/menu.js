@@ -41,13 +41,13 @@ function createMenuItems() {
     {
       photo: 'yellow',
       dish: 'Comfort Chunks',
-      price: '$3',
+      price: '$4',
       desc: 'Hearty bits of protein smothered in a savory gravy'
     },
     {
       photo: 'purple',
       dish: 'Savory Shreds',
-      price: '$4',
+      price: '$3',
       desc: 'Finely shredded meat swimming in a savory gravy'
     },
     {
@@ -89,4 +89,22 @@ function createMenuItems() {
   return menu;
 }
 
-export { createTitle, createH2, createMenuHero, createMenuItems };
+function buildMenu(div, main, footer) {
+  main.appendChild(createTitle());
+  main.appendChild(createH2());
+  // main.appendChild(createHero('menuHero'));
+  main.appendChild(createMenuHero());
+  const hero = document.getElementById('menuHero');
+
+  const credit = document.createElement('p');
+  credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
+  credit.classList.add('credit');
+  hero.appendChild(credit);
+  const h2 = document.createElement('h2');
+  h2.textContent = 'Your choice of chicken, beef, or fish';
+  main.appendChild(h2);
+  main.appendChild(createMenuItems());
+  div.insertBefore(main, footer);
+}
+
+export { buildMenu };
