@@ -31,23 +31,28 @@ function createHeadline() {
 
     for (let i = 0; i < headline.length; i++) {
 
-      let text;
+      let text, cat;
 
       if (i % 2 == 0) { // Create normal text
         text = document.createTextNode(headline[i]);
       } else { // Create span to target fonts
         text = document.createElement('span');
         text.textContent = headline[i];
-        const cat = headline[i].toLowerCase().split(' ')[1];
+        cat = headline[i].toLowerCase().split(' ')[1];
         text.classList.add(cat);
       }
       h1.appendChild(text);
-      if (i == 1) {
+      if (i == 1 || cat == 'cat') {
+        console.log(cat == 'cat');
         const lineBreak = document.createElement('br');
-        if (window.innerWidth > 589) {
+        if (window.innerWidth > 599) {
           lineBreak.classList.add('hide');
         }
-        h1.appendChild(lineBreak);
+        if (cat == 'cat') {
+          h1.insertBefore(lineBreak, h1.lastElementChild);
+        } else {
+          h1.appendChild(lineBreak);
+        }
       }
     }
 
@@ -128,7 +133,7 @@ function buildHome(div, main, footer) {
 let br = document.getElementsByTagName('br');
 window.addEventListener('resize', e => {
   for (let i = 0; i < br.length; i++) {
-    if (e.target.innerWidth < 590) {
+    if (e.target.innerWidth < 600) {
       br[i].classList.remove('hide');
     } else {
       br[i].classList.add('hide');
