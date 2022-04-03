@@ -19,30 +19,46 @@ function createHeader() {
 }
 
 function createHeadline() {
-  const h1 = document.createElement('h1');
-  const headline = ['Whether ', ' or ', ', from ', ' to ', " – you'll fit in at "];
+  const div = document.createElement('div');
+  const headline = ['Whether ', ' or ', 'from ', ' to ', "you'll fit in at "];
   const cats = ['Illegaly Smol', "Heckin' Chonker", 'Fine Boi', 'Absolute Unit', 'Fat Cat Café'];
 
   let text;
 
   let i;
+  let h1;
+  let count = 1;
   for (i = 0; i < cats.length; i++) {
     const span = document.createElement('span');
     span.textContent = cats[i];
     span.classList.add(cats[i].toLowerCase().split(' ')[1]);
     text = document.createTextNode(headline[i]);
+    if (i % 2 == 0) {
+      console.log(i, i % 2 == 0);
+      h1 = document.createElement('h1');
+      h1.classList.add('headline');
+      h1.setAttribute('id', `headline${count}`);
+      count++;
+    }
     h1.appendChild(text);
     h1.appendChild(span);
+    if (i == 1) {
+      h1.appendChild(document.createTextNode(','));
+    }
+    if (i == 3) {
+      h1.appendChild(document.createTextNode(' -'));
+    }
+    console.log(span);
+    if (i % 2 != 0) {
+      div.appendChild(h1);
+    }
+
+    // h1.appendChild(text);
+    // h1.appendChild(span);
   }
-
-  // text = document.createTextNode(headline[i]);
-  // h1.appendChild(text);
-
-  // const strong = document.createElement('strong');
-  // strong.textContent = 'Fat Cat Café';
-  // h1.appendChild(strong);
-  h1.classList.add('headline');
-  return h1;
+  div.appendChild(h1);
+  // div.classList.add('headline');
+  return div;
 }
 
 function createHero(id) {
