@@ -36,25 +36,25 @@ function createMenuItems() {
       photo: 'blue',
       dish: 'Classic Paté',
       price: '$2',
-      desc: 'Solid mold of protein, straight from the can'
+      desc: 'Sink your teefies into this solid mold of potted meat, straight from the can'
     },
     {
       photo: 'yellow',
       dish: 'Comfort Chunks',
       price: '$4',
-      desc: 'Hearty bits of protein smothered in a savory gravy'
+      desc: 'The purrrfect combination of meaty bits and gravies'
     },
     {
       photo: 'purple',
       dish: 'Savory Shreds',
       price: '$3',
-      desc: 'Finely shredded meat swimming in a savory gravy'
+      desc: 'For those who purrrfer a little meat with their gravies'
     },
     {
       photo: 'orange',
       dish: 'Fat Cat Feast',
       price: '$5',
-      desc: "Choose any two combinations of Paté, Chunks, or Shreds",
+      desc: "Our Classic Paté topped with your choice of Comfort Chunks or Savory Shreds",
     }
   ];
 

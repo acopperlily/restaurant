@@ -45,7 +45,7 @@ function createHeadline() {
       if (i == 1 || cat == 'cat') {
         console.log(cat == 'cat');
         const lineBreak = document.createElement('br');
-        if (window.innerWidth > 599) {
+        if (window.innerWidth > 609) {
           lineBreak.classList.add('hide');
         }
         if (cat == 'cat') {
@@ -133,7 +133,7 @@ function buildHome(div, main, footer) {
 let br = document.getElementsByTagName('br');
 window.addEventListener('resize', e => {
   for (let i = 0; i < br.length; i++) {
-    if (e.target.innerWidth < 600) {
+    if (e.target.innerWidth < 610) {
       br[i].classList.remove('hide');
     } else {
       br[i].classList.add('hide');
