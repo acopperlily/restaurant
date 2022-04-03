@@ -19,46 +19,35 @@ function createHeader() {
 }
 
 function createHeadline() {
-  const div = document.createElement('div');
-  const headline = ['Whether ', ' or ', 'from ', ' to ', "you'll fit in at "];
-  const cats = ['Illegaly Smol', "Heckin' Chonker", 'Fine Boi', 'Absolute Unit', 'Fat Cat Café'];
+  const heading = document.createElement('div');
+  const headline1 = ['Whether ', 'Illegaly Smol', ' or ', "Heckin' Chonker", ','];
+  const headline2 = ['from ', 'Fine Boi', ' to ', 'Absolute Unit', ' -'];
+  const headline3 = ["you'll fit in at ", 'Fat Cat Café'];
+  [headline1, headline2, headline3].forEach(headline => {
+    const h1 = document.createElement('h1');
+    for (let i = 0; i < headline1.length; i++) {
 
-  let text;
+      // Because headline3 has only 2 elements
+      if (headline[i] == null) {
+        break;
+      }
+      let text;
 
-  let i;
-  let h1;
-  let count = 1;
-  for (i = 0; i < cats.length; i++) {
-    const span = document.createElement('span');
-    span.textContent = cats[i];
-    span.classList.add(cats[i].toLowerCase().split(' ')[1]);
-    text = document.createTextNode(headline[i]);
-    if (i % 2 == 0) {
-      console.log(i, i % 2 == 0);
-      h1 = document.createElement('h1');
-      h1.classList.add('headline');
-      h1.setAttribute('id', `headline${count}`);
-      count++;
-    }
-    h1.appendChild(text);
-    h1.appendChild(span);
-    if (i == 1) {
-      h1.appendChild(document.createTextNode(','));
-    }
-    if (i == 3) {
-      h1.appendChild(document.createTextNode(' -'));
-    }
-    console.log(span);
-    if (i % 2 != 0) {
-      div.appendChild(h1);
-    }
 
-    // h1.appendChild(text);
-    // h1.appendChild(span);
-  }
-  div.appendChild(h1);
-  // div.classList.add('headline');
-  return div;
+      if (i % 2 == 0) { // Create normal text
+        text = document.createTextNode(headline[i]);
+      } else { // Create span to target fonts
+        text = document.createElement('span');
+        text.textContent = headline[i];
+        const cat = headline[i].toLowerCase().split(' ')[1];
+        text.classList.add(cat);
+      }
+      h1.appendChild(text);
+    }
+    heading.appendChild(h1);
+    heading.classList.add('headline');
+  });
+  return heading;
 }
 
 function createHero(id) {
