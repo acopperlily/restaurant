@@ -43,7 +43,6 @@ function createHeadline() {
       }
       h1.appendChild(text);
       if (i == 1 || cat == 'cat') {
-        console.log(cat == 'cat');
         const lineBreak = document.createElement('br');
         if (window.innerWidth > 609) {
           lineBreak.classList.add('hide');

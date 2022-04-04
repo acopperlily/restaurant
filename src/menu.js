@@ -62,17 +62,13 @@ function createMenuItems() {
   let i = 0;
 
   menuItems.forEach(item => {
-    console.log(item);
     const menuItem = document.createElement('div');
     menuItem.classList.add('menuItem');
 
     for (let key in item) {
       const tag = document.createElement(tags[i]);
-      console.log(key);
-      console.log(`${key}`);
       tag.classList.add(key);
       if (key == 'photo') {
-        console.log(key == 'photo');
         tag.style.backgroundColor = item.photo;
       } else {
         tag.textContent = item[key];
