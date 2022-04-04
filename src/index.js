@@ -2,18 +2,16 @@ import './style.css';
 import './microchip.jpg';
 // import './heroCat.jpg';
 import './catFoodSmallest.jpg';
-import { BuildHeader } from './page.js';
-import {
-  buildHome,
-  createFooter
-} from './home';
+import { BuildHeader, BuildFooter } from './page.js';
+import { buildHome } from './home.js';
 import { buildMenu } from './menu.js';
 import { buildContact } from './contact.js';
 
 let page = 'home';
 const div = document.getElementById('content');
 BuildHeader(div);
-div.appendChild(createFooter());
+BuildFooter(div);
+// div.appendChild(createFooter());
 const footer = document.getElementsByTagName('footer')[0];
 const main = document.createElement('main');
 

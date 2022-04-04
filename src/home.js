@@ -1,23 +1,6 @@
 import Fountain from './fountain.jpg';
 import No from './no.png';
 
-function createHeader() {
-  const header = document.createElement('header');
-  const ul = document.createElement('ul');
-  const links = ['Fat Cat Café', 'Menu', 'Contact'];
-  const ids = ['home', 'menu', 'contact'];
-
-  for (let i = 0; i < links.length; i++) {
-    const li = document.createElement('li');
-    li.textContent = links[i];
-    li.setAttribute('id', ids[i]);
-    ul.appendChild(li);
-  }
-
-  header.appendChild(ul);
-  return header;
-}
-
 function createHeadline() {
   const heading = document.createElement('div');
   const headline1 = ['Whether ', 'Illegaly Smol', ' or ', "Heckin' Chonker", ','];
@@ -111,17 +94,6 @@ function createFeatures() {
   return features;
 }
 
-function createFooter() {
-  const footer = document.createElement('footer');
-  const cc = document.createElement('p');
-  const icon = document.createElement('span');
-
-  cc.textContent = 'Made with ❤️ by April Copley';
-  icon.textContent = 'O';
-  footer.appendChild(cc);
-  return footer;
-}
-
 function buildHome(div, main, footer) {
   main.appendChild(createHeadline());
   main.appendChild(createHero('homeHero'));
@@ -140,4 +112,4 @@ window.addEventListener('resize', e => {
   }
 });
 
-export { createHeader, createFooter, buildHome };
+export { buildHome };

@@ -17,4 +17,14 @@ const BuildHeader = ((div) => {
     div.appendChild(header);
 });
 
-export { BuildHeader };
+const BuildFooter = ((div) => {
+    const footer = document.createElement('footer');
+    const cc = document.createElement('p');
+    const icon = document.createElement('span');
+
+    cc.textContent = 'Made with ❤️ by April Copley';
+    footer.appendChild(cc);
+    div.appendChild(footer);
+});
+
+export { BuildHeader, BuildFooter };
