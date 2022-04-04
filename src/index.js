@@ -2,9 +2,9 @@ import './style.css';
 import './microchip.jpg';
 // import './heroCat.jpg';
 import './catFoodSmallest.jpg';
+import { BuildHeader } from './page.js';
 import {
   buildHome,
-  createHeader,
   createFooter
 } from './home';
 import { buildMenu } from './menu.js';
@@ -12,7 +12,7 @@ import { buildContact } from './contact.js';
 
 let page = 'home';
 const div = document.getElementById('content');
-div.appendChild(createHeader());
+BuildHeader(div);
 div.appendChild(createFooter());
 const footer = document.getElementsByTagName('footer')[0];
 const main = document.createElement('main');
