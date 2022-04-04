@@ -5,7 +5,7 @@ import './catFoodSmallest.jpg';
 import { BuildHeader, BuildFooter } from './page.js';
 import { buildHome } from './home.js';
 import { buildMenu } from './menu.js';
-import { buildContact } from './contact.js';
+import { BuildContact } from './contact.js';
 
 let page = 'home';
 const div = document.getElementById('content');
@@ -29,7 +29,7 @@ tabs.forEach(tab => {
       if (link == 'menu') {
         buildMenu(div, main, footer);
       } else if (link == 'contact') {
-        buildContact(div, main, footer);
+        BuildContact(div, main, footer);
       } else {
         buildHome(div, main, footer);
       }

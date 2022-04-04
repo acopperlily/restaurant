@@ -1,13 +1,14 @@
-function createTitle() {
-    const title = document.createElement('h1');
-    title.textContent = 'Contact Us';
-    title.classList.add('pageTitle');
-    return title;
-}
+const BuildContact = ((div, main, footer) => {
+    const createTitle = () => {
+        const title = document.createElement('h1');
+        console.log(title);
+        title.textContent = 'Contact Us';
+        title.classList.add('pageTitle');
+        main.appendChild(title);
+    }
 
-function buildContact(div, main, footer) {
-    main.appendChild(createTitle());
+    createTitle();
     div.insertBefore(main, footer);
-}
+});
 
-export { buildContact };
+export { BuildContact };
