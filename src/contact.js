@@ -6,9 +6,15 @@ const BuildContact = ((div, main, footer) => {
     return title;
   };
 
+  const createFormTitle = () => {
+    const formTitle = document.createElement('h2');
+    formTitle.textContent = "We'd love to hear from you!";
+    return formTitle;
+  }
+
   const createContainer = () => {
     const container = document.createElement('div');
-    container.setAttribute('id', 'container');
+    container.setAttribute('id', 'formContainer');
     container.appendChild(createForm());
     return container;
   }
@@ -25,7 +31,7 @@ const BuildContact = ((div, main, footer) => {
     if (field.type) {
       input.setAttribute('type', field.type);
     }
-    input.setAttribute('placeholder', field.name == 'Name' || field.name == 'Email' ? field.name : 'Tell us how awesome we are!');
+    input.setAttribute('placeholder', field.placeholder);
     input.setAttribute('id', field.name.toLowerCase());
     return input;
   }
@@ -45,16 +51,19 @@ const BuildContact = ((div, main, footer) => {
     const fields = [
       {
         name: 'Name',
+        placeholder: 'Jorts the Cat',
         field: 'input',
         type: 'text'
       },
       {
         name: 'Email',
+        placeholder: 'dogssuck@meow.com',
         field: 'input',
         type: 'email'
       },
       {
         name: 'Message',
+        placeholder: 'Tell us how awesome we are!',
         field: 'textarea',
       },
     ];
@@ -76,6 +85,7 @@ const BuildContact = ((div, main, footer) => {
 
   const contactFunctions = [
     createTitle,
+    createFormTitle,
     createContainer
   ];
 
