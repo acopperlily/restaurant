@@ -101,4 +101,4 @@ function buildMenu(div, main, footer) {
   div.insertBefore(main, footer);
 }
 
-export { buildMenu };
+export default buildMenu;

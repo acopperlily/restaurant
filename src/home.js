@@ -112,4 +112,4 @@ window.addEventListener('resize', e => {
   }
 });
 
-export { buildHome };
+export default buildHome;

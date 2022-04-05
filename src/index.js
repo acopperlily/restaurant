@@ -3,9 +3,9 @@ import './microchip.jpg';
 // import './heroCat.jpg';
 import './catFoodSmallest.jpg';
 import { BuildHeader, BuildFooter } from './page.js';
-import { buildHome } from './home.js';
-import { buildMenu } from './menu.js';
-import { BuildContact } from './contact.js';
+import buildHome from './home.js';
+import buildMenu from './menu.js';
+import BuildContact from './contact.js';
 
 let page = 'home';
 const div = document.getElementById('content');

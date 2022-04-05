@@ -8,13 +8,16 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  overflow: scroll;
 }
+
 
 header {
   width: 100%;
   padding: 0 30px;
   background-color: purple;
+  position: fixed;
+  top: 0;
+
 }
 
 footer {
@@ -75,15 +78,17 @@ li:hover {
 }
 
 .highlight {
+  transition: .75s;
   background-color: rgba(210, 210, 210, .5);
   border-bottom: 2px solid gray;
 }
 
 #content {
+  /* This offsets the fixed position of header */
+  padding-top: 90px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 .pageTitle {

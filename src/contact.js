@@ -76,4 +76,4 @@ const BuildContact = ((div, main, footer) => {
   div.insertBefore(main, footer);
 });
 
-export { BuildContact };
+export default BuildContact;
