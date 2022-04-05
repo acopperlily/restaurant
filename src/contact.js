@@ -6,6 +6,13 @@ const BuildContact = ((div, main, footer) => {
     return title;
   };
 
+  const createContainer = () => {
+    const container = document.createElement('div');
+    container.setAttribute('id', 'container');
+    container.appendChild(createForm());
+    return container;
+  }
+
   const createLabel = (name) => {
     const label = document.createElement('label');
     label.setAttribute('for', name.toLowerCase());
@@ -69,7 +76,7 @@ const BuildContact = ((div, main, footer) => {
 
   const contactFunctions = [
     createTitle,
-    createForm
+    createContainer
   ];
 
   contactFunctions.forEach(func => main.appendChild(func()));

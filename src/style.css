@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid orange; */
 }
 
 body {
@@ -89,6 +90,13 @@ li:hover {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .pageTitle {
@@ -293,13 +301,21 @@ li:hover {
   grid-column: 1 / 4;
 }
 
+/* Contact Page */
+#container {
+
+  width: clamp(420px, 66%, 900px);
+  padding: 40px 30px 20px 30px;
+  background-color: rgba(100, 100, 100, .5);
+  border-radius: 12px;
+}
+
 label::after {
   content: ':';
 }
 
 form {
-  margin: 50px auto;
-  width: 60%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
