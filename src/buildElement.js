@@ -11,7 +11,11 @@ const buildElement = (elementObj, parent) => {
   if (elementObj.text) {
     element.textContent = elementObj.text;
   }
-
+  if (elementObj.src) {
+    const img = new Image();
+    img.setAttribute('src', elementObj.src);
+    element.appendChild(img);
+  }
   parent.appendChild(element);
   return element;
 };

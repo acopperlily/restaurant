@@ -1,31 +1,5 @@
+import buildElement from './buildElement';
 import catFood from './catFoodSmallest.jpg';
-
-function createTitle() {
-  const h1 = document.createElement('h1');
-  h1.classList.add('pageTitle');
-  h1.textContent = 'Om Nom Noms';
-  return h1;
-}
-
-function createH2() {
-  const h2 = document.createElement('h2');
-  h2.textContent = 'Enjoy unlimited trips to our Water Fountain with purrrchase of any entrée'
-  return h2;
-}
-
-function createMenuHero() {
-  const div = document.createElement('div');
-  const hero = new Image();
-  hero.src = catFood;
-  div.setAttribute('id', 'menuHero');
-  div.appendChild(hero);
-  return div;
-}
-
-function createPhotoCredit(hero) {
-  hero.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
-  hero.classList.add('credit');
-}
 
 const menuItems = {
   apps: [
@@ -86,16 +60,14 @@ const menuItems = {
   ],
 };
 
-function createMenuTitle(title) {
-  const menuTitle = document.createElement('h2');
-  menuTitle.classList.add('menuTitle');
-  menuTitle.textContent = title;
-  return menuTitle;
-}
+function createMenuItems(menuItems, main) {
 
-function createMenuItems(menuItems) {
-  const menu = document.createElement('div');
-  menu.classList.add('menuItems');
+  const menuInfo = {
+    tag: 'div',
+    classes: ['menuItems']
+  };
+
+  const menu = buildElement(menuInfo, main);
 
   const tags = ['div', 'h3', 'p', 'p'];
   let i = 0;
@@ -124,19 +96,41 @@ function createMenuItems(menuItems) {
 
 
 function buildMenu(div, main, footer) {
-  main.appendChild(createTitle());
-  main.appendChild(createH2());
-  main.appendChild(createMenuHero());
-  const hero = document.getElementById('menuHero');
+  const titleInfo = {
+    tag: 'h1',
+    classes: ['pageTitle'],
+    text: 'Om Nom Noms'
+  };
 
-  const credit = document.createElement('p');
-  credit.textContent = 'Photo by Anastasiia Rozumna on Unsplash';
-  credit.classList.add('credit');
-  hero.appendChild(credit);
+  const subtitleInfo = {
+    tag: 'h2',
+    text: "Enjoy unlimited trips to our Water Fountain with purrrchase of any entrée"
+  };
+
+  const heroInfo = {
+    tag: 'div',
+    id: 'menuHero',
+    src: catFood
+  };
+
+  const creditInfo = {
+    tag: 'p',
+    classes: ['credit'],
+    text: 'Photo by Anastasiia Rozumna on Unsplash'
+  };
+
+  [titleInfo, subtitleInfo, heroInfo, creditInfo].forEach(obj => {
+    buildElement(obj, main);
+  });
 
   for (let menu in menuItems) {
-    main.appendChild(createMenuTitle(menu));
-    main.appendChild(createMenuItems(menuItems[menu]));
+    const menuTitle = {
+      tag: 'h2',
+      classes: ['menuTitle'],
+      text: menu
+    };
+    buildElement(menuTitle, main);
+    main.appendChild(createMenuItems(menuItems[menu], main));
   }
   div.insertBefore(main, footer);
 }
