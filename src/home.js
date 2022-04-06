@@ -66,7 +66,7 @@ function createFeatures() {
   ];
 
   const details = [
-    "We encourage you to eat as little or as much as you please",
+    "We're not here to tell you how to live your nine lives",
     "For your comfort, all noms are served on a flat dish",
     "Enjoy fresh, running water thoughtfully placed far away from your meal"
   ]

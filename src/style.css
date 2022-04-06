@@ -1,3 +1,7 @@
+:root {
+  --card-bg-color: rgba(100, 100, 100, .5);
+}
+
 *,
 ::after,
 ::before {
@@ -93,6 +97,7 @@ li:hover {
 }
 
 main {
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -260,11 +265,18 @@ main {
 
 /* Om Nom Noms */
 
+.menuTitle {
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}
+
 .menuItems {
   padding: 30px;
   width: 70vw;
-  /* height: auto; */
-  margin: 80px auto;
+  margin: 0 auto 40px auto;
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
   align-items: flex-start;
@@ -306,7 +318,7 @@ main {
   margin-bottom: 50px;
   width: clamp(440px, 66%, 800px);
   padding: 40px 30px 20px 30px;
-  background-color: rgba(100, 100, 100, .5);
+  background-color: var(--card-bg-color);
   border-radius: 12px;
 }
 
