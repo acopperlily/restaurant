@@ -27,36 +27,66 @@ function createPhotoCredit(hero) {
   hero.classList.add('credit');
 }
 
-function createMenuItems() {
-  const menu = document.createElement('div');
-  menu.setAttribute('id', 'menuItems');
+const apps = [
+  {
+    photo: 'pink',
+    dish: 'Tableside Tuna',
+    price: '$6',
+    desc: "We'll open the can at your table"
+  },
+  {
+    photo: 'red',
+    dish: 'Sneaky Cheez',
+    price: '$2',
+    desc: 'Yes, you can haz cheez!'
+  }
+];
 
-  const menuItems = [
-    {
-      photo: 'blue',
-      dish: 'Classic Paté',
-      price: '$2',
-      desc: 'Sink your teefies into this solid mold of potted meat, straight from the can'
-    },
-    {
-      photo: 'yellow',
-      dish: 'Comfort Chunks',
-      price: '$4',
-      desc: 'The purrrfect combination of meaty bits and gravies'
-    },
-    {
-      photo: 'purple',
-      dish: 'Savory Shreds',
-      price: '$3',
-      desc: 'For those who purrrfer a little meat with their gravies'
-    },
-    {
-      photo: 'orange',
-      dish: 'Fat Cat Feast',
-      price: '$5',
-      desc: "Our Classic Paté topped with your choice of Comfort Chunks or Savory Shreds",
-    }
-  ];
+const entrees = [
+  {
+    photo: 'blue',
+    dish: 'Classic Paté',
+    price: '$2',
+    desc: 'Sink your teefies into this solid mold of potted meat, straight from the can'
+  },
+  {
+    photo: 'yellow',
+    dish: 'Comfort Chunks',
+    price: '$4',
+    desc: 'The purrrfect combination of meaty bits and gravies'
+  },
+  {
+    photo: 'purple',
+    dish: 'Savory Shreds',
+    price: '$3',
+    desc: 'For those who purrrfer a little meat with their gravies'
+  },
+  {
+    photo: 'orange',
+    dish: 'Fat Cat Feast',
+    price: '$5',
+    desc: "Our Classic Paté topped with your choice of Comfort Chunks or Savory Shreds",
+  }
+];
+
+const treats = [
+  {
+    photo: 'lightblue',
+    dish: 'Sausage Nibbles',
+    price: '$3',
+    desc: 'You can have a little sausage, as a treat'
+  },
+  {
+    photo: 'lightpink',
+    dish: 'Saucer of Milk',
+    price: '$1',
+    desc: "We won't tell you how to live your nine lives"
+  }
+];
+
+function createMenuItems(menuItems) {
+  const menu = document.createElement('div');
+  menu.classList.add('menuItems');
 
   const tags = ['div', 'h3', 'p', 'p'];
   let i = 0;
@@ -97,7 +127,9 @@ function buildMenu(div, main, footer) {
   credit.classList.add('credit');
   hero.appendChild(credit);
 
-  main.appendChild(createMenuItems());
+  main.appendChild(createMenuItems(apps));
+  main.appendChild(createMenuItems(entrees));
+  main.appendChild(createMenuItems(treats));
   div.insertBefore(main, footer);
 }
 

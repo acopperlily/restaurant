@@ -260,7 +260,7 @@ main {
 
 /* Om Nom Noms */
 
-#menuItems {
+.menuItems {
   padding: 30px;
   width: 70vw;
   /* height: auto; */
