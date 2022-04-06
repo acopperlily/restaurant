@@ -2,6 +2,7 @@ import './style.css';
 import './microchip.jpg';
 // import './heroCat.jpg';
 import './catFoodSmallest.jpg';
+import buildElement from './buildElement.js';
 import { BuildHeader, BuildFooter } from './page.js';
 import buildHome from './home.js';
 import buildMenu from './menu.js';
@@ -11,9 +12,8 @@ let page = 'home';
 const div = document.getElementById('content');
 BuildHeader(div);
 BuildFooter(div);
-// div.appendChild(createFooter());
 const footer = document.getElementsByTagName('footer')[0];
-const main = document.createElement('main');
+const main = buildElement({ tag: 'main' }, div);
 
 buildHome(div, main, footer);
 
