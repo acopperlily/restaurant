@@ -1,5 +1,10 @@
 const buildElement = (elementObj, parent) => {
   const element = document.createElement(elementObj.tag);
+  if (elementObj.stuff) {
+    for (let prop in elementObj.stuff) {
+      element.setAttribute(prop, elementObj.stuff[prop]);
+    }
+  }
   if (elementObj.id) {
     element.setAttribute('id', elementObj.id);
   }
