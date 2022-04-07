@@ -9,7 +9,7 @@ const BuildHeader = ((div) => {
     const tabInfo = {
       tag: 'li',
       id: tab.toLowerCase(),
-      classes: ['tab'],
+      className: 'tab',
       text: tab,
     }
 
@@ -25,13 +25,13 @@ const BuildFooter = ((div) => {
   const footerInfo = {
     tag: 'footer',
     id: 'butt',
-    classes: ['footer'],
+    className: 'footer',
   };
 
   const footerText = {
     tag: 'p',
     id: 'mine',
-    classes: ['mine'],
+    className: 'mine',
     text: 'Made with ❤️ by April Copley ',
   };
 

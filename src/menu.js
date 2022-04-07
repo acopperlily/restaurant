@@ -64,7 +64,7 @@ function createMenuItems(menuItems, main) {
 
   const menuInfo = {
     tag: 'div',
-    classes: ['menuItems']
+    className: 'menuItems'
   };
 
   const menu = buildElement(menuInfo, main);
@@ -98,7 +98,7 @@ function createMenuItems(menuItems, main) {
 function buildMenu(div, main, footer) {
   const titleInfo = {
     tag: 'h1',
-    classes: ['pageTitle'],
+    className: 'pageTitle',
     text: 'Om Nom Noms'
   };
 
@@ -115,7 +115,7 @@ function buildMenu(div, main, footer) {
 
   const creditInfo = {
     tag: 'p',
-    classes: ['credit'],
+    className: 'credit',
     text: 'Photo by Anastasiia Rozumna on Unsplash'
   };
 
@@ -126,7 +126,7 @@ function buildMenu(div, main, footer) {
   for (let menu in menuItems) {
     const menuTitle = {
       tag: 'h2',
-      classes: ['menuTitle'],
+      className: 'menuTitle',
       text: menu
     };
     buildElement(menuTitle, main);

@@ -3,10 +3,8 @@ const buildElement = (elementObj, parent) => {
   if (elementObj.id) {
     element.setAttribute('id', elementObj.id);
   }
-  if (elementObj.classes) {
-    for (let i = 0; i < elementObj.classes.length; i++) {
-      element.classList.add(elementObj.classes[i]);
-    };
+  if (elementObj.className) {
+    element.classList.add(elementObj.className);
   }
   if (elementObj.text) {
     element.textContent = elementObj.text;
