@@ -1,4 +1,4 @@
-import buildElement from './buildElement';
+import { buildElement, makeElement } from './buildElement';
 import catFood from './catFoodSmallest.jpg';
 
 const menuItems = {

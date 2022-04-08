@@ -1,4 +1,4 @@
-import buildElement from "./buildElement.js";
+import { buildElement, makeElement } from "./buildElement.js";
 
 const BuildContact = ((div, main, footer) => {
 
@@ -16,7 +16,6 @@ const BuildContact = ((div, main, footer) => {
   buildElement(formTitleInfo, main);
 
   const form = buildElement({ tag: 'form' }, main);
-  console.log(form);
   const fields = [
     {
       tag: 'input',

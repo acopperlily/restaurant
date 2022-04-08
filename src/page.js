@@ -1,4 +1,4 @@
-import buildElement from "./buildElement.js";
+import { buildElement, makeElement } from "./buildElement.js";
 
 const BuildHeader = ((div) => {
   const header = buildElement({ tag: 'header' }, div);

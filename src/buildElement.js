@@ -23,4 +23,45 @@ const buildElement = (elementObj, parent) => {
   return element;
 };
 
-export default buildElement;
+const makeElement = (tag) => {
+  const newElement = document.createElement(tag);
+  console.log('new:', newElement);
+
+  const addText = (text) => {
+    newElement.textContent = text;
+  };
+
+  const addClasses = (...classNames) => {
+    classNames.forEach(className => {
+      newElement.classList.add(className);
+    });
+  };
+
+  const addAttributes = (attributes) => {
+    for (let prop in attributes) {
+      console.log(prop, attributes[prop]);
+      newElement.setAttribute(prop, attributes[prop]);
+    }
+  };
+
+  const addImage = (image) => {
+    const newImage = new Image();
+    newImage.src = image;
+    newElement.appendChild(newImage);
+  };
+
+  const attachElement = (parent) => {
+    parent.appendChild(newElement);
+  };
+
+  return {
+    newElement,
+    addText,
+    addClasses,
+    addAttributes,
+    addImage,
+    attachElement
+  }
+};
+
+export { buildElement, makeElement };

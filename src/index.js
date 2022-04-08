@@ -1,8 +1,8 @@
 import './style.css';
-import './microchip.jpg';
+import Photo from './microchip.jpg';
 // import './heroCat.jpg';
 import './catFoodSmallest.jpg';
-import buildElement from './buildElement.js';
+import { buildElement, makeElement } from './buildElement.js';
 import { BuildHeader, BuildFooter } from './page.js';
 import buildHome from './home.js';
 import buildMenu from './menu.js';
@@ -39,3 +39,11 @@ tabs.forEach(tab => {
   });
 });
 
+// const test = makeElement('h1');
+// console.log(test);
+// test.addText('testing...');
+// test.addClasses('butt', 'nope');
+// test.addAttributes({ 'id': 'hole' });
+// test.addImage(Photo);
+// test.attachElement(main);
+// console.log(test);
