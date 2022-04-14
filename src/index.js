@@ -14,9 +14,10 @@ const div = document.getElementById("content");
 div.appendChild(BuildHeader());
 div.appendChild(BuildFooter());
 const footer = document.getElementsByTagName("footer")[0];
-const main = buildElement({ tag: "main" }, div);
+const main = makeElement("main");
+const mainElement = main.getTags();
 
-buildHome(div, main, footer);
+div.insertBefore(buildHome(mainElement), footer);
 
 const tabs = document.querySelectorAll("li");
 tabs.forEach((tab) => {
@@ -26,28 +27,16 @@ tabs.forEach((tab) => {
       document.getElementById(page).classList.remove("highlight");
       page = link;
       document.getElementById(page).classList.add("highlight");
-      main.textContent = "";
+      main.addText("");
       if (link == "menu") {
-        buildMenu(div, main, footer);
+        div.insertBefore(buildMenu(mainElement), footer);
       } else if (link == "contact") {
-        BuildContact(div, main, footer);
+        BuildContact(div, mainElement, footer);
       } else {
-        buildHome(div, main, footer);
+        div.insertBefore(buildHome(mainElement), footer);
       }
     } else {
       console.log("same page");
     }
   });
 });
-
-// const test = makeElement("h1");
-// console.log("test:", test);
-// console.log("get tags:", test.getTags());
-// test.addClass("test");
-// test.addAttribute("id", "testing");
-// test.addText("this is a test");
-// const section = makeElement("section");
-// console.log(section);
-// test.attachElement(section);
-
-// main.appendChild(section.getTags());
