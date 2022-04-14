@@ -24,30 +24,14 @@ const BuildHeader = () => {
   return header.getTags();
 };
 
-const BuildFooter = (div) => {
-  const footerInfo = {
-    tag: "footer",
-    id: "butt",
-    className: "footer",
-  };
+const BuildFooter = () => {
+  const footer = makeElement("footer");
+  const text = makeElement("p");
 
-  const footerText = {
-    tag: "p",
-    id: "mine",
-    className: "mine",
-    text: "Made with ❤️ by April Copley ",
-  };
+  text.addText("Made with ❤️ by April Copley");
+  text.attachElement(footer);
 
-  const icon = {
-    tag: "span",
-    id: "icon",
-    text: "",
-  };
-
-  const footer = buildElement(footerInfo, div);
-  [footerText, icon].forEach((obj) => {
-    buildElement(obj, footer);
-  });
+  return footer.getTags();
 };
 
 export { BuildHeader, BuildFooter };

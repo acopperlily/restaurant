@@ -12,7 +12,7 @@ let page = "home";
 const div = document.getElementById("content");
 
 div.appendChild(BuildHeader());
-BuildFooter(div);
+div.appendChild(BuildFooter());
 const footer = document.getElementsByTagName("footer")[0];
 const main = buildElement({ tag: "main" }, div);
 
