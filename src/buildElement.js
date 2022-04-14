@@ -6,7 +6,7 @@ const buildElement = (elementObj, parent) => {
     }
   }
   if (elementObj.id) {
-    element.setAttribute('id', elementObj.id);
+    element.setAttribute("id", elementObj.id);
   }
   if (elementObj.className) {
     element.classList.add(elementObj.className);
@@ -16,7 +16,7 @@ const buildElement = (elementObj, parent) => {
   }
   if (elementObj.src) {
     const img = new Image();
-    img.setAttribute('src', elementObj.src);
+    img.setAttribute("src", elementObj.src);
     element.appendChild(img);
   }
   parent.appendChild(element);
@@ -25,16 +25,26 @@ const buildElement = (elementObj, parent) => {
 
 const makeElement = (tag) => {
   const newElement = document.createElement(tag);
-  console.log('new:', newElement);
+  console.log("new:", newElement);
+
+  const getTags = () => newElement;
 
   const addText = (text) => {
     newElement.textContent = text;
   };
 
+  const addClass = (className) => {
+    newElement.classList.add(className);
+  };
+
   const addClasses = (...classNames) => {
-    classNames.forEach(className => {
+    classNames.forEach((className) => {
       newElement.classList.add(className);
     });
+  };
+
+  const addAttribute = (property, value) => {
+    newElement.setAttribute(property, value);
   };
 
   const addAttributes = (attributes) => {
@@ -51,17 +61,20 @@ const makeElement = (tag) => {
   };
 
   const attachElement = (parent) => {
-    parent.appendChild(newElement);
+    parent.getTags().appendChild(newElement);
   };
 
   return {
     newElement,
+    getTags,
     addText,
+    addClass,
     addClasses,
+    addAttribute,
     addAttributes,
     addImage,
-    attachElement
-  }
+    attachElement,
+  };
 };
 
 export { buildElement, makeElement };
