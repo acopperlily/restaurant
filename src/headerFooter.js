@@ -1,6 +1,6 @@
 import { buildElement, makeElement } from "./buildElement.js";
 
-const BuildHeader = () => {
+const BuildHeader = (div) => {
   const header = makeElement("header");
   const nav = makeElement("nav");
   const ul = makeElement("ul");
@@ -20,18 +20,17 @@ const BuildHeader = () => {
 
   ul.attachElement(nav);
   nav.attachElement(header);
-
-  return header.getTags();
+  header.attachElement(div);
 };
 
-const BuildFooter = () => {
+const BuildFooter = (div) => {
   const footer = makeElement("footer");
   const text = makeElement("p");
 
   text.addText("Made with ❤️ by April Copley");
   text.attachElement(footer);
-
-  return footer.getTags();
+  footer.attachElement(div);
+  // return footer.getTags();
 };
 
 export { BuildHeader, BuildFooter };

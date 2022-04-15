@@ -61,11 +61,14 @@ const makeElement = (tag) => {
   };
 
   const attachElement = (parent) => {
-    parent.getTags().appendChild(newElement);
+    console.log("parent:", parent instanceof HTMLElement);
+    if (!(parent instanceof HTMLElement)) {
+      parent = parent.getTags();
+    }
+    parent.appendChild(newElement);
   };
 
   return {
-    newElement,
     getTags,
     addText,
     addClass,

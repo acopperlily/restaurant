@@ -99,12 +99,11 @@ function createFeatures() {
   return features;
 }
 
-function buildHome(main) {
+function buildHome(main, div, footer) {
   main.appendChild(createHeadline());
   main.appendChild(createHero("homeHero"));
   main.appendChild(createFeatures());
-
-  return main;
+  div.insertBefore(main, footer);
 }
 
 let br = document.getElementsByTagName("br");

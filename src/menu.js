@@ -93,7 +93,7 @@ function createMenuItems(menuItems, main) {
   return menu;
 }
 
-function buildMenu(main) {
+function buildMenu(main, div, footer) {
   const titleInfo = {
     tag: "h1",
     className: "pageTitle",
@@ -130,8 +130,7 @@ function buildMenu(main) {
     buildElement(menuTitle, main);
     main.appendChild(createMenuItems(menuItems[menu], main));
   }
-  return main;
-  // div.insertBefore(main, footer);
+  div.insertBefore(main, footer);
 }
 
 export default buildMenu;
