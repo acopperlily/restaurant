@@ -2,7 +2,7 @@ import "./style.css";
 import Photo from "./microchip.jpg";
 // import './heroCat.jpg';
 import "./catFoodSmallest.jpg";
-import { buildElement, makeElement } from "./buildElement.js";
+import { buildElement } from "./buildElement.js";
 import { BuildHeader, BuildFooter } from "./headerFooter.js";
 import buildHome from "./home.js";
 import buildMenu from "./menu.js";
