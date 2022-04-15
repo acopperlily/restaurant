@@ -1,5 +1,6 @@
 import Fountain from "./fountain.jpg";
 import No from "./no.png";
+import buildElement from "./buildElement.js";
 
 function createHeadline() {
   const heading = document.createElement("section");

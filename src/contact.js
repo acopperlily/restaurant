@@ -1,4 +1,4 @@
-import { buildElement } from "./buildElement.js";
+import buildElement from "./buildElement.js";
 
 const BuildContact = (div, main, footer) => {
   const titleInfo = {
