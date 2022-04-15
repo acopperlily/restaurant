@@ -19,7 +19,7 @@ const BuildContact = (div, main, footer) => {
     {
       tag: "input",
       id: "name",
-      stuff: {
+      properties: {
         name: "Name",
         placeholder: "Jorts the Cat",
         type: "text",
@@ -28,7 +28,7 @@ const BuildContact = (div, main, footer) => {
     {
       tag: "input",
       id: "email",
-      stuff: {
+      properties: {
         name: "Email",
         placeholder: "dogssuck@meow.com",
         type: "email",
@@ -37,7 +37,7 @@ const BuildContact = (div, main, footer) => {
     {
       tag: "textarea",
       id: "message",
-      stuff: {
+      properties: {
         name: "Message",
         placeholder: "Tell us how awesome we are!",
       },
@@ -58,9 +58,9 @@ const BuildContact = (div, main, footer) => {
     const labelInfo = {
       tag: "label",
       id: field.id,
-      text: field.stuff.name,
-      stuff: {
-        for: field.stuff.name,
+      text: field.properties.name,
+      properties: {
+        for: field.properties.name,
       },
     };
     buildElement(labelInfo, inputDiv);

@@ -1,36 +1,35 @@
 import { buildElement, makeElement } from "./buildElement.js";
 
 const BuildHeader = (div) => {
-  const header = makeElement("header");
-  const nav = makeElement("nav");
-  const ul = makeElement("ul");
+  const header = buildElement({ tag: "header" }, div);
+  console.log("header:", header);
+  const nav = buildElement({ tag: "nav" }, header);
+  const ul = buildElement({ tag: "ul" }, nav);
   const tabs = ["home", "Menu", "Contact"];
 
   tabs.forEach((tab) => {
-    const li = makeElement("li");
-    li.addAttribute("id", tab.toLowerCase());
-    li.addClass("tab");
-    if (tab === "home") {
-      li.addText("Fat Cat Café");
-    } else {
-      li.addText(tab);
-    }
-    li.attachElement(ul);
-  });
+    const liInfo = {
+      tag: "li",
+      id: tab.toLowerCase(),
+      className: "tab",
+      text: tab,
+    };
 
-  ul.attachElement(nav);
-  nav.attachElement(header);
-  header.attachElement(div);
+    const li = buildElement(liInfo, ul);
+
+    if (tab === "home") {
+      li.textContent = "Fat Cat Café";
+    }
+  });
 };
 
 const BuildFooter = (div) => {
-  const footer = makeElement("footer");
-  const text = makeElement("p");
-
-  text.addText("Made with ❤️ by April Copley");
-  text.attachElement(footer);
-  footer.attachElement(div);
-  // return footer.getTags();
+  const footer = buildElement({ tag: "footer" }, div);
+  const footerTextInfo = {
+    tag: "p",
+    text: "Made with ❤️ by April Copley",
+  };
+  buildElement(footerTextInfo, footer);
 };
 
 export { BuildHeader, BuildFooter };

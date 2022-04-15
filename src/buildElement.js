@@ -1,26 +1,27 @@
 const buildElement = (elementObj, parent) => {
-  const element = document.createElement(elementObj.tag);
-  if (elementObj.stuff) {
-    for (let prop in elementObj.stuff) {
-      element.setAttribute(prop, elementObj.stuff[prop]);
+  const newElement = document.createElement(elementObj.tag);
+  if (elementObj.properties) {
+    for (let prop in elementObj.properties) {
+      newElement.setAttribute(prop, elementObj.properties[prop]);
     }
   }
   if (elementObj.id) {
-    element.setAttribute("id", elementObj.id);
+    newElement.setAttribute("id", elementObj.id);
   }
   if (elementObj.className) {
-    element.classList.add(elementObj.className);
+    newElement.classList.add(elementObj.className);
   }
   if (elementObj.text) {
-    element.textContent = elementObj.text;
+    newElement.textContent = elementObj.text;
   }
   if (elementObj.src) {
     const img = new Image();
     img.setAttribute("src", elementObj.src);
-    element.appendChild(img);
+    newElement.appendChild(img);
   }
-  parent.appendChild(element);
-  return element;
+
+  parent.appendChild(newElement);
+  return newElement;
 };
 
 const makeElement = (tag) => {
@@ -61,7 +62,6 @@ const makeElement = (tag) => {
   };
 
   const attachElement = (parent) => {
-    console.log("parent:", parent instanceof HTMLElement);
     if (!(parent instanceof HTMLElement)) {
       parent = parent.getTags();
     }
