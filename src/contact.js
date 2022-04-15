@@ -1,4 +1,4 @@
-import { buildElement, makeElement } from "./buildElement.js";
+import { buildElement } from "./buildElement.js";
 
 const BuildContact = (div, main, footer) => {
   const titleInfo = {
@@ -6,15 +6,25 @@ const BuildContact = (div, main, footer) => {
     className: "pageTitle",
     text: "Contact Us",
   };
-  buildElement(titleInfo, main);
 
   const formTitleInfo = {
     tag: "h2",
     text: "We'd love to hear from you!",
   };
-  buildElement(formTitleInfo, main);
 
-  const form = buildElement({ tag: "form" }, main);
+  [titleInfo, formTitleInfo].forEach((info) => {
+    buildElement(info, main);
+  });
+
+  const formContainerInfo = {
+    tag: "div",
+    id: "formContainer",
+  };
+
+  const formContainer = buildElement(formContainerInfo, main);
+
+  const form = buildElement({ tag: "form" }, formContainer);
+
   const fields = [
     {
       tag: "input",
@@ -77,15 +87,6 @@ const BuildContact = (div, main, footer) => {
     e.preventDefault();
     alert("This is not a real form, but thanks for playing!");
   });
-
-  const containerInfo = {
-    tag: "div",
-    id: "formContainer",
-  };
-  const containerDiv = buildElement(containerInfo, main);
-  console.log("main:", main);
-  containerDiv.appendChild(form);
-  console.log("main:", main);
 
   div.insertBefore(main, footer);
 };

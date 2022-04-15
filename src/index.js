@@ -10,16 +10,14 @@ import BuildContact from "./contact.js";
 
 let page = "home";
 const div = document.getElementById("content");
-console.log(div instanceof HTMLElement);
 
 BuildHeader(div);
 BuildFooter(div);
 
 const footer = document.getElementsByTagName("footer")[0];
-const main = makeElement("main");
-const mainElement = main.getTags();
+const main = buildElement({ tag: "main" }, div);
 
-buildHome(mainElement, div, footer);
+buildHome(main, div, footer);
 
 const tabs = document.querySelectorAll("li");
 tabs.forEach((tab) => {
@@ -29,13 +27,13 @@ tabs.forEach((tab) => {
       document.getElementById(page).classList.remove("highlight");
       page = link;
       document.getElementById(page).classList.add("highlight");
-      main.addText("");
+      main.textContent = "";
       if (link == "menu") {
-        buildMenu(mainElement, div, footer);
+        buildMenu(main, div, footer);
       } else if (link == "contact") {
-        BuildContact(div, mainElement, footer);
+        BuildContact(div, main, footer);
       } else {
-        buildHome(mainElement, div, footer);
+        buildHome(main, div, footer);
       }
     } else {
       console.log("same page");
