@@ -2,68 +2,111 @@ import Fountain from "./fountain.jpg";
 import No from "./no.png";
 import buildElement from "./buildElement.js";
 
-function createHeadline() {
-  const heading = document.createElement("section");
-  const headline1 = [
+function createHeadline(main) {
+  const heading = buildElement({ tag: "section" }, main);
+  const headlineInfo = {
+    tag: "div",
+    id: "headline-container",
+  };
+  const headlineContainer = buildElement(headlineInfo, heading);
+
+  const headline1 = ["Whether ", "Illegaly Smol "];
+  const headline2 = [" or ", "Heckin' Chonker", ", "];
+  const headline3 = [" from ", "Fine Boi "];
+  const headline4 = [" to ", "Absolute Unit", "-"];
+  const headline5 = ["you'll fit in at "];
+  const headline6 = ["Fat Cat Café"];
+
+  const headlines = [
     "Whether ",
-    "Illegaly Smol",
+    "",
     " or ",
-    "Heckin' Chonker",
-    ",",
+    "",
+    ", ",
+    "from ",
+    "",
+    " to ",
+    "",
+    "- ",
+    "you'll fit in at ",
+    "",
   ];
-  const headline2 = ["from ", "Fine Boi", " to ", "Absolute Unit", " -"];
-  const headline3 = ["you'll fit in at ", "Fat Cat Café"];
+  const cats = [
+    "Illegaly Smol",
+    "Heckin' Chonker",
+    "Fine Boi",
+    "Absolute Unit",
+    "Fat Cat Café",
+  ];
+
+  let n = 0;
+  let text = "";
+  // const headlineTest = buildElement({ tag: "h1", headlineContainer });
+  for (let i = 0; i < headlines.length; i++) {
+    if (headlines[i] == "") {
+      const spanInfo = {
+        tag: "span",
+        id: cats[n].toLowerCase().split(" ")[1],
+        text: cats[n],
+      };
+      // const span = buildElement(spanInfo, main);
+
+      text += cats[n];
+      n++;
+    } else {
+      text += headlines[i];
+    }
+    console.log(text);
+  }
   let count = 1;
 
-  [headline1, headline2, headline3].forEach((headline) => {
-    const h1 = document.createElement("h1");
+  [headline1, headline2, headline3, headline4, headline5, headline6].forEach(
+    (headline) => {
+      const h1 = document.createElement("h1");
 
-    for (let i = 0; i < headline.length; i++) {
-      let text, cat;
+      for (let i = 0; i < headline.length; i++) {
+        let text, cat;
 
-      if (i % 2 == 0) {
-        // Create normal text
-        text = document.createTextNode(headline[i]);
-      } else {
-        // Create span to target fonts
-        text = document.createElement("span");
-        text.textContent = headline[i];
-        cat = headline[i].toLowerCase().split(" ")[1];
-        text.classList.add(cat);
-      }
-      h1.appendChild(text);
-      if (i == 1 || cat == "cat") {
-        const lineBreak = document.createElement("br");
-        if (window.innerWidth > 609) {
-          lineBreak.classList.add("hide");
-        }
-        if (cat == "cat") {
-          h1.insertBefore(lineBreak, h1.lastElementChild);
+        if (i % 2 == 0 && headline[i] !== "Fat Cat Café") {
+          // Create normal text
+          text = document.createTextNode(headline[i]);
         } else {
-          h1.appendChild(lineBreak);
+          // Create span to target fonts
+          text = document.createElement("span");
+          text.textContent = headline[i];
+          cat = headline[i].toLowerCase().split(" ")[1];
+          text.classList.add(cat);
         }
+        h1.appendChild(text);
       }
-    }
 
-    h1.setAttribute("id", `headline${count}`);
-    count++;
-    heading.appendChild(h1);
-  });
+      h1.setAttribute("id", `headline${count}`);
+      count++;
+      headlineContainer.appendChild(h1);
+    }
+  );
   heading.setAttribute("id", "headline");
   return heading;
 }
 
-function createHero(id) {
-  const hero = document.createElement("div");
-  hero.setAttribute("id", id);
-  return hero;
-}
+const createHero = (main) => {
+  const heroInfo = {
+    tag: "section",
+    id: "home-hero",
+  };
+  buildElement(heroInfo, main);
+};
 
-function createFeatures() {
-  const features = document.createElement("section");
-  features.setAttribute("id", "features");
+const createFeatures = (main) => {
+  const featuresInfo = {
+    tag: "section",
+    id: "features",
+  };
+
+  const features = buildElement(featuresInfo, main);
+
   const images = [No, No, Fountain];
-  const ids = ["no", "dish", "fountain"];
+  const ids = ["microchip", "dish", "fountain"];
 
   const featureHeadlines = [
     "Microchip Feeders Prohibited",
@@ -78,44 +121,44 @@ function createFeatures() {
   ];
 
   for (let i = 0; i < images.length; i++) {
-    const icon = document.createElement("div");
-    icon.setAttribute("id", ids[i]);
+    const featureInfo = {
+      tag: "div",
+      className: "feature",
+    };
 
-    const img = new Image();
-    img.src = images[i];
-    icon.appendChild(img);
-    const featureHeadline = document.createElement("h3");
-    featureHeadline.textContent = featureHeadlines[i];
-    const feature = document.createElement("div");
-    feature.classList.add("feature");
+    const feature = buildElement(featureInfo, features);
 
-    const detail = document.createElement("p");
-    detail.textContent = details[i];
-    feature.appendChild(icon);
-    feature.appendChild(featureHeadline);
-    feature.appendChild(detail);
-    features.appendChild(feature);
+    const iconInfo = {
+      tag: "div",
+      id: ids[i],
+    };
+    const icon = buildElement(iconInfo, feature);
+
+    buildElement({ src: images[i] }, icon);
+
+    const featureHeadlineInfo = {
+      tag: "h3",
+      text: featureHeadlines[i],
+    };
+
+    const detailInfo = {
+      tag: "p",
+      text: details[i],
+    };
+
+    [featureHeadlineInfo, detailInfo].forEach((info) => {
+      buildElement(info, feature);
+    });
   }
 
   return features;
-}
+};
 
-function buildHome(main, div, footer) {
-  main.appendChild(createHeadline());
-  main.appendChild(createHero("homeHero"));
-  main.appendChild(createFeatures());
+const buildHome = (main, div, footer) => {
+  main.appendChild(createHeadline(main));
+  createHero(main);
+  createFeatures(main);
   div.insertBefore(main, footer);
-}
-
-let br = document.getElementsByTagName("br");
-window.addEventListener("resize", (e) => {
-  for (let i = 0; i < br.length; i++) {
-    if (e.target.innerWidth < 610) {
-      br[i].classList.remove("hide");
-    } else {
-      br[i].classList.add("hide");
-    }
-  }
-});
+};
 
 export default buildHome;

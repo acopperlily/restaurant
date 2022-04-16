@@ -1,5 +1,13 @@
 const buildElement = (elementObj, parent) => {
-  const newElement = document.createElement(elementObj.tag);
+  let newElement;
+  if (elementObj.src) {
+    newElement = new Image();
+    newElement.setAttribute("src", elementObj.src);
+  }
+
+  if (elementObj.tag) {
+    newElement = document.createElement(elementObj.tag);
+  }
   if (elementObj.properties) {
     for (let prop in elementObj.properties) {
       newElement.setAttribute(prop, elementObj.properties[prop]);
@@ -13,11 +21,6 @@ const buildElement = (elementObj, parent) => {
   }
   if (elementObj.text) {
     newElement.textContent = elementObj.text;
-  }
-  if (elementObj.src) {
-    const img = new Image();
-    img.setAttribute("src", elementObj.src);
-    newElement.appendChild(img);
   }
 
   parent.appendChild(newElement);

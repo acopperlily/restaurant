@@ -106,7 +106,6 @@ function buildMenu(main, div, footer) {
   };
 
   const heroInfo = {
-    tag: "div",
     id: "menuHero",
     src: catFood,
   };
